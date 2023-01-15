@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Create Account</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://kit.fontawesome.com/0ca0033246.js" crossorigin="anonymous"></script>
+
+    </head>
+    <style>
+        body {
+            background-color: #f7f7f7;
+          }
+        .Header{
+            font-family:Garamond;
+            text-align:center;
+            font-size:39px;
+            color:#00607A;
+        }
+        .login{
+            margin-left:35%;
+            background-color: white;
+            align:center;
+            height:530px;
+            width:400px;
+            border-radius: 5%;
+            box-shadow: 5px 11px 19px #888888;
+        }
+        .login h1{
+            text-align:center;
+            font-family:Helvetica;
+            color:#00607A;
+            font-size:42px;
+        }
+        table{
+            margin-left: auto;
+            margin-right: auto;
+        }
+        input{
+            height:30px;
+            width:370px;    
+            margin-top:4%;
+        }
+        a {
+            color: hotpink;
+            margin-left: 7%;
+            margin-top: 10%;
+        }
+        ul{
+            margin-left: 0.6%;
+        }
+    </style>
+    <body >
+        <div class="Header">
+            <h1><i class="fa-solid fa-bars-progress"></i> Survey Management Portal </h1>
+        </div>
+        <div class="login">
+            <h1><i class="fa-solid fa-right-to-bracket"></i> Create Account</h1>
+            <form action="{% url 'app1:registerurl' %}" method='post'>
+                {% csrf_token %}
+                <table>
+                    <tr>
+                        <td><input type='text' name='username' placeholder="Enter Your your username"></td>
+                    </tr>
+                    <tr>
+                        <td><input type='password' name='password' placeholder="Enter Your your password"></td>
+                    </tr>
+                    <tr>
+                    <tr>
+                        <td><input type='password' name='password2' placeholder="Confirm your password"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="submit" value="Create Account" style="height:40px;width:380px;background-color:#04AA6D;color:white"></td>
+                    </tr>
+                </table>    
+                <ul>
+                    <li>Be between 8 and 16 characters.</li>
+                    <li>Have letters and numbers.</li>
+                    <li>Not have. more than 7 numbers. any special characters (for example: %, #, @)</li>
+                    <li>At least 12 characters long but 14 or more is better.</li>
+                    <li>A combination of uppercase letters, lowercase letters, numbers, and symbols.</li>
+                </ul>     
+                <a style='text-decoration:None;' href="{% url 'app1:myloginurl' %}"> Sign In</a>  
+        </div>
+    </body>
+</html>

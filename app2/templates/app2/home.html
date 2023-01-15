@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Survey Portal | Home </title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=10">
+        <link rel="stylesheet" href="">
+        <script src="https://kit.fontawesome.com/0ca0033246.js" crossorigin="anonymous"></script>
+
+    </head>
+    <style>
+        body {
+            background-color: #f7f7f7;
+        }
+        .sidebar{
+            margin-top:-39.5px;
+            margin-left:-7.7px;
+            margin-bottom:-7.7px;
+            background-color: #06264A;
+            align:center;
+            height:713px;
+            width:320px;
+            box-shadow: 5px 20px 19px #888888;
+        }
+        .sidebar h4{
+            text-align:center;
+            font-family:poppins,sans-serif;;
+            color:white;
+            font-size:30px;
+        }
+        .sidebar ul{
+            font-family:poppins,sans-serif;;
+            color:white;
+            font-size:20px;
+        }
+        .sidebar ul a{
+            color: lightblue;
+            display: block;
+            line-height: 80px;
+            
+        }
+        .sidebar ul a:hover{
+            color:white;
+        }
+        .sidebar ul img{
+            border-radius:50%;
+            height:150px;
+        }
+        .sidebar ul h3{
+            font-size:18px;
+        }
+        .Dashboard-content{
+            height:100px;
+            background-color: #06264A;
+            margin-left:310px;
+            margin-top:-753px;
+        }
+        .Dashboard-content h1{
+            font-family:poppins,sans-serif;
+            text-align:center;
+            font-size:60px;
+            color:lightblue;
+        }
+        .Dashboard-count{
+            margin-left:310px;
+            margin-top:-30px;
+            height:613.1px;
+            background-color: #f7f7f7;
+        }
+        .Dashboard-flex{
+            margin-left:0px;
+            background-color: #f7f7f7;
+            height:613.1px;
+            width:100%;
+        }
+        .Dashboard-flex h1{
+            font-family:poppins,sans-serif;
+            margin-left:500px;
+            color: #06264A;
+        }
+        .Dashboard-flex table{
+            border-collapse: collapse;
+            margin-top:30px;
+        }
+        th, td {
+            text-align: center;
+            padding: 8px;
+          }
+          tr:nth-child(even){background-color: #f0f0f0}
+          
+          th {
+            font-family:poppins,sans-serif;
+            background-color: white;
+            color: black;
+          }
+          .Dashboard-flex table report{
+            background-color: #f7f7f7;
+          }
+          .report h4{
+            font-family:poppins,sans-serif;
+            margin-left:15px;
+          }
+    </style>
+    <body>
+        <div class="sidebar">
+            <h4><i class="fa-solid fa-gauge"></i> Dashboard</h4>
+            <ul>
+                <a style='text-decoration:None;' href="{% url 'app2:viewsurveyurls' %}"><i class="fa-solid fa-paste"></i> View Survey Questionaire</a>
+                <a style='text-decoration:None;' href="{% url 'app2:createreporturls' %}"><i class="fa-solid fa-folder-plus"></i> Create Survey Report</a>
+                <a style='text-decoration:None;' href=""><i class="fa-solid fa-registered"></i> Register Report&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a>
+                <a style='text-decoration:None;' href="{% url 'app2:viewresponseurls' %}"><i class="fa-solid fa-book-open-reader"></i> User Response</a>
+                <a style='text-decoration:None;' href="{% url 'app2:downloadreporturls' %}"><i class="fa-solid fa-download"></i> Download Report</a>
+                <img src= {% static 'app2/img/user.png' %} align='center'>
+                <h3>Account:&nbsp&nbsp&nbsp&nbsp{{request.user.username}}</h3>
+            </ul>
+        </div>
+        <div class="Dashboard-content">
+            <h1><i class="fa-solid fa-bars-progress"></i> Survey Management Portal </h1>
+        </div>
+        <div class="Dashboard-count">
+            <div class="Dashboard-flex">
+                <h1>Survey 1:-Zomato And Swiggy Experience</h1>
+                <table align="center" width='100%' border="1">
+                    <tr>
+                        <th>Number of Responses</th>
+                        <th>Total Students</th>
+                        <th>Males</th>
+                        <th>Females</th>
+                        <th>Favour of mobile</th>
+                        <th>Favour of Website</th>
+                        <th>People Who love Zomato</th>
+                        <th>People Who love Swiggy</th>
+                    </tr>
+                    <tr>
+                        <td><a href="{% url 'app2:userresponseurls' %}">{{countinst}}</a></td>
+                        <td>{{occinst}}</td>
+                        <td>{{geninst}}</td>
+                        <td>{{geninst_female}}</td>
+                        <td>{{mobile}}</td>
+                        <td>{{website}}</td>
+                        <td>{{comparisoninst}}</td>
+                        <td>{{comparisonswiggy}}</td>
+                    </tr>
+                </table>
+            <div class="Dashboard-flex">
+                <h1>Survey 2:-Ios and Android User Experience</h1>
+                <table align="center" width='100%' border="1">
+                    <tr>
+                        <th>Number of Responses</th>
+                        <th>How many people have smartphone?</th>
+                        <th>Total Businessman</th>
+                        <th>People infulence by built quality</th>
+                        <th>People with major concern of Battery health</th>
+                        <th>People who rate their Phone 10</th>
+                        <th>People Who love Ios over Android</th>
+                        <th>People Who are using Apple</th>
+                    </tr>
+                    <tr>
+                        <td><a href="{% url 'app2:userresponse2urls' %}">{{count_surevy2}}</a></td>
+                        <td>{{count_smartphone_yes}}</td>
+                        <td>{{occuinst_surveyb}}</td>
+                        <td>{{factors_influence}}</td>
+                        <td>{{Mojor_concern}}</td>
+                        <td>{{rating_own_phone}}</td>
+                        <td>{{ios_android}}</td>
+                        <td>{{which_phone}}</td>
+                    </tr>
+                </table>
+                <div class="report">
+                    {% for i in reportinst %}
+                    <h4>Report Reviewed By:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{i.Name}}</h4>
+                    <h4>Date of Review:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{i.date}}</h4>
+                    <h4>Review Details:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{i.comment}}</h4>
+                    {% endfor %}<hr><hr><hr>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Survey Portal | Active Survey</title>
+        <script src="https://kit.fontawesome.com/0ca0033246.js" crossorigin="anonymous"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <style>
+        body {
+            background-color: #f7f7f7;
+        }
+        .Header{
+            font-family:Garamond;
+            text-align:center;
+            font-size:39px;
+            color:#00607A;
+        }
+        a{
+            color: #00607A;
+            text-decoration:none;
+            font-size:30px;
+        }
+        .view-panel{
+            background-color: #f7f7f7;
+            height:300px;
+            margin-left:-10px;
+            margin-right:-10px;
+        }
+        .survey1{
+            background-color: #00607A;
+            height:125px;
+            width:600px;
+            margin-left:18px;
+            margin-top:10px;
+            border-radius:30px;
+        }
+        .survey1 a{
+            color: lightblue;
+            font-size:40px;
+            margin-left:50px;
+        }
+        .survey1 a:hover{
+            color:white;
+        }
+        .survey1 h3 i{
+            color:#90EE90;
+            margin-left:20px;
+        }
+        .survey1 h3{
+            color:white;
+            font-family:Garamond;
+        }
+        .survey1 p{
+            color: white;
+        }
+        .survey1:hover {
+            height:170px;
+            width:620px;
+          }
+    </style>
+    <body>
+        <div class="Header">
+            <h1><i class="fa-solid fa-bars-progress"></i> Survey Management Portal </h1>
+        </div>
+        <a href="{% url 'app2:homeurls' %}">Back</a>
+        <div class="view-panel">
+            {% comment %} ------------------------------------------->>>>>>>>>>>SURVEY1 {% endcomment %}
+            <div class="survey1">    
+                <a style='text-decoration:None;' href="{% url 'app2:survey1urls' %}"><i class="fa-solid fa-angles-right"></i> Survey 1</a>
+                <p>Survey form for customer/Audience polls for Online Food Ordering Applications</p>
+                <h3><i class="fa-solid fa-circle"></i> Active</h3>
+            </div>
+            {% comment %} ------------------------------------------->>>>>>>>>>>SURVEY2 {% endcomment %}
+            <div class="survey1">    
+                <a style='text-decoration:None;' href="{% url 'app2:survey2urls' %}"><i class="fa-solid fa-angles-right"></i> Survey 2</a>
+                <p>Survey form for customer/Audience polls for Ios/Android Smartphones</p>
+                <h3><i class="fa-solid fa-circle"></i> Active</h3>
+
+            </div>
+        </div>
+    </body>
+</html>

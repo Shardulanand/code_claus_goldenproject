@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Survey Portal | User Response</title>
+        <script src="https://kit.fontawesome.com/0ca0033246.js" crossorigin="anonymous"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <style>
+        body {
+            background-color: #f7f7f7;
+        }
+        .Header{
+            font-family:Garamond;
+            text-align:center;
+            font-size:39px;
+            color:#00607A;
+        }
+        .Dashboard-count{
+            height:100px;
+            background-color: #f7f7f7;
+            height:613px;
+        }
+        .Dashboard-count table{
+            border-collapse: collapse;
+            margin-top:30px;
+        }
+        th, td {
+            text-align: center;
+            padding: 8px;
+          }
+          
+          tr:nth-child(even){background-color: #f0f0f0}
+          
+          th {
+            font-family:poppins,sans-serif;
+            background-color: #04AA6D;
+            color: white;
+          }
+    </style>
+    <body>
+        <div class="Header">
+            <h1><i class="fa-solid fa-bars-progress"></i> Survey Management Portal </h1>
+        </div>
+        <a href="{% url 'app2:homeurls' %}">Back</a>
+        <div class="Dashboard-count">  
+            <table align="center" width='100%' border="1">
+                <tr>
+                    <th style="background-color:white;color:#06264A">S.no</th>
+                    <th style="background-color:white;color:#06264A">Name</th>
+                    <th style="background-color:white;color:#06264A">Age</th>
+                    <th style="background-color:white;color:#06264A">Occupation</th>
+                    <th style="background-color:white;color:#06264A">Gender</th>
+                    <th style="background-color:white;color:#06264A">Mobile or Website</th>
+                    <th style="background-color:white;color:#06264A">Problems you usually face</th>
+                    <th style="background-color:white;color:#06264A">How easy is the app</th>
+                    <th style="background-color:white;color:#06264A">Are prices high</th>
+                    <th style="background-color:white;color:#06264A">Which App do Prefer</th>
+                </tr>
+                {% for items in surveyinst %}
+                <tr align='center'>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{items.Name}}</td>
+                    <td>{{items.age}}</td>
+                    <td>{{items.occupation}}</td>
+                    <td>{{items.gender}}</td>
+                    <td>{{items.medium}}</td>
+                    <td>{{items.problem}}</td>
+                    <td>{{items.easy}}</td>
+                    <td>{{items.price}}</td>
+                    <td>{{items.comparison}}</td>
+                </tr>
+                {% endfor %}
+        </div>
+    </body>
+</html>

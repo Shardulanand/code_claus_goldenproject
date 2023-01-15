@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Survey portal | Survey1</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://kit.fontawesome.com/0ca0033246.js" crossorigin="anonymous"></script>
+    </head>
+    <style>
+        body {
+            background-color: #f7f7f7;
+        }
+        .Header{
+            font-family:Garamond;
+            text-align:center;
+            font-size:39px;
+            color:#00607A;
+        }
+        .Survey1{
+            margin-left:-1%;
+            margin-right:1%;
+            background-color: white;
+            align:center;
+            height:770px;
+            width:57%;
+            border-radius: 1%;
+        }
+        .Survey1 table{
+            font-family:Helvetica;
+            text-align:center;
+            margin-left:1%;
+            font-size:25px;
+            color:#00607A;
+        }
+        table tr th a{
+            color: #00607A;
+            text-decoration:none;
+        }
+    </style>
+    <body>
+        <div class="Header">
+            <h1><i class="fa-solid fa-bars-progress"></i> Survey Management Portal </h1>
+        </div>
+        <div class="Survey1">
+            <div class="questionair">
+                <form action="{% url 'app2:survey1urls' %}" method='post'>
+                    {% csrf_token %}
+                    <table>
+                        <tr align='left'>
+                            <th><label for='Name'>Enter Your Name?&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="{% url 'app2:viewsurveyurls' %}">Back</a></label></th>
+                        </tr>
+                        <tr>
+                            <td>   
+                                <input type='text' id='Name' name='Name' style="height:30px;width:800px" placeholder='Enter your First Name'>
+                            </td>
+                        </tr>
+                        <tr align='left'>
+                            <th><label for='Phonenumber'>Enter Your Phonenumber?</label></th>
+                        </tr>
+                        <tr>
+                            <td>   
+                                <input type='Number' id='Phonenumber' name='Phonenumber' style="height:30px;width:800px" placeholder='Enter your Phone Number'>
+                            </td>
+                        </tr>
+                        <tr align='left'>
+                            <th><label for='age'>Enter Your Age?</label></th>
+                        </tr>
+                        <tr>
+                            <td>   
+                                <input type='Number' id='age' name='age' style="height:30px;width:800px" placeholder='Enter your Age?'>
+                            </td>
+                        </tr>
+                        <tr align='left'>
+                            <th><label for='occupation'>Enter Your occupation?</label></th>
+                        </tr>
+                        <tr>
+                            <td>   
+                                <input type='text' id='occupation' name='occupation' style="height:30px;width:800px" placeholder='Enter your occupation?'>
+                            </td>
+                        </tr>
+                        <tr align='left'>
+                            <th><label for='gender'>Enter Your gender?</label></th>
+                        </tr>
+                        <tr>
+                            <td>   
+                                <input type='text' id='gender' name='gender' style="height:30px;width:800px" placeholder='Enter your gender?'>
+                            </td>
+                        </tr>
+                        <tr align='left'>
+                            <th><label for='medium'>What medium do you prefer to order food online Mobile or Website?</label></th>
+                        </tr>
+                        <tr>
+                            <td>   
+                                <input type='text' id='medium' name='medium' style="height:30px;width:800px" placeholder='food online Mobile or Website?'>
+                            </td>
+                        </tr>
+                        <tr align='left'>
+                            <th><label for='problem'>What problems you usually face, while ordering food online?</label></th>
+                        </tr>
+                        <tr>
+                            <td>   
+                                <input type='text' id='problem' name='problem' style="height:30px;width:800px" placeholder='Describe your Problem?'>
+                            </td>
+                        </tr>
+                        <tr align='left'>
+                            <th><label for='easy'>How easy is the app to use?</label></th>
+                        </tr>
+                        <tr>
+                            <td>   
+                                <input type='text' id='easy' name='easy' style="height:30px;width:800px" placeholder='good very-good Excelent?'>
+                            </td>
+                        </tr>
+                        <tr align='left'>
+                            <th><label for='price'>Do you feel the food prices are fixed high?</label></th>
+                        </tr>
+                        <tr>
+                            <td>   
+                                <input type='text' id='price' name='price' style="height:30px;width:800px" placeholder='Yes No Sometimes Cant Say?'>
+                            </td>
+                        </tr>
+                        <tr align='left'>
+                            <th><label for='comparison'>Which App is best for ordering food Online?</label></th>
+                        </tr>
+                        <tr>
+                            <td>   
+                                <input type='text' id='comparison' name='comparison' style="height:30px;width:800px" placeholder='Zomato Swiggy magicpin etc?'>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type='submit' value='Submit your Response?' style="height:40px;width:810px;background-color:#04AA6D;color:white"></td>
+                        </tr>
+                    </table>
+            </div>
+        </div>
+    </body>
+</html>
